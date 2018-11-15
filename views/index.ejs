@@ -1,11 +1,21 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include('header') %>
+
+<h1><%= title %></h1>
+<p>Welcome to <%= title %></p>
+<button>登录</button> <button>注册</button>
+
+<div class="user-create">
+  <form action="/users/create" method="POST">
+    <label for="username">用户名</label>
+    <input placeholder="用户名" type="text" name="username">
+    <input type="submit">
+  </form>
+</div>
+
+<%# 用户列表 %>
+<div class="user-list">
+<% users.forEach(function(user){ %>
+  <div class="user-list-item"><%= user.name %></div>
+<% }) %>
+</div>
+<%- include('footer') %>

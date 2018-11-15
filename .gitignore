@@ -1,5 +1,7 @@
 .DS_Store
 node_modules
+express-Example
+N-blog
 /dist
 /config/database.js
 # local env files
